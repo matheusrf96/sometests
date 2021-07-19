@@ -10,3 +10,6 @@ class Holder:
         self.document = document
         self.email = email
         self.phone = phone
+
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__

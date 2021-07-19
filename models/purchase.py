@@ -14,6 +14,9 @@ class Purchase:
         self.price = price
         self.payment_method = payment_method
 
+    def __eq__(self, other):
+        return self.__dict__ == other.__dict__
+
     def generate_sale_objects(data):
         purchase_data = data.get('purchase')
         holder_data = data.get('holder')
