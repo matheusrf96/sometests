@@ -38,4 +38,18 @@ def expected_return(payload):
 
 
 def test_generate_purchase():
+    # Geral
     assert expected_return(payload()) == Purchase.generate_sale_objects(payload())
+
+    # Quase detalhado
+    expected_purchase, expected_holder, expected_product = expected_return(payload())
+    purchase, holder, product = Purchase.generate_sale_objects(payload())
+
+    assert expected_purchase == purchase
+    assert expected_holder == holder
+    assert expected_product == product
+
+    # Detalhado
+    assert expected_purchase.__dict__ == purchase.__dict__
+    assert expected_holder.__dict__ == holder.__dict__
+    assert expected_product.__dict__ == product.__dict__
