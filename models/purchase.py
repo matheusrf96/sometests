@@ -7,9 +7,6 @@ class Purchase:
     PM_CREDITCARD = 0
     PM_TRANSFER = 1
 
-    price = 0.0
-    payment_method = 0
-
     def __init__(self, price, payment_method):
         self.price = price
         self.payment_method = payment_method
