@@ -39,3 +39,4 @@ def test_select():
     assert first_item.get('name') == example.get('name')
     assert first_item.get('description') == example.get('description')
     assert first_item.get('active') == example.get('active')
+    assert first_item == example
